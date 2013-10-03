@@ -1,7 +1,5 @@
 function run() {
-    
-    // DRAW PLAYGROUND
-    
+        
     var ground = document.getElementById('ground').getContext('2d'),
         turna = document.getElementById('turna'),
         turn = Math.round(Math.random()),
@@ -14,7 +12,7 @@ function run() {
     
     // FIRST LINE ( VERTICAL )
     
-    
+        ground.clearRect(0, 0, 320, 320)
         ground.beginPath();
         ground.moveTo(95,20);
         ground.lineWidth=32;
@@ -295,7 +293,7 @@ function run() {
         
         var canvasPos = document.getElementById('ground').getBoundingClientRect();
         var topPos = y + canvasPos.top - 40  + 'px';
-        var leftPos = x + canvasPos.left - 50  + 'px';
+        var leftPos = x + canvasPos.left - 40  + 'px';
         document.getElementById(id).style.top=topPos;
         document.getElementById(id).style.left=leftPos;
         
@@ -398,11 +396,8 @@ function run() {
         s['p'+i] = function() { set('p'+i) }
     }*/
     
-    window.s = s;
-    window.set = set;
     for( var i = 1; i < 10; i++ ) {
         document.getElementById('p'+i).addEventListener('touchstart', s['p'+i]);
-        console.log( 'document.getElementById(p'+i+').addEventListener(touchstart, s[p' + i +'])' )
     }
         
     function disable() {
@@ -487,9 +482,7 @@ function run() {
 };
 
 document.body.onload = function() {
-    setTimeout( function() {
-        run();
-    }, 500 );
+    run();
 }
 
 
