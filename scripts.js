@@ -387,7 +387,7 @@ function run() {
         p2 : function() { set('p2') },
         p3 : function() { set('p3') },
         p4 : function() { set('p4') },
-        p5 : function() { set('p6') },
+        p5 : function() { set('p5') },
         p6 : function() { set('p6') },
         p7 : function() { set('p7') },
         p8 : function() { set('p8') },
