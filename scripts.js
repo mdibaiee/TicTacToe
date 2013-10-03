@@ -487,7 +487,9 @@ function run() {
 };
 
 document.body.onload = function() {
-    run();
+    setTimeout( function() {
+        run();
+    }, 500 );
 }
 
 
