@@ -1,0 +1,128 @@
+
+* {
+	margin:0;
+}
+
+
+
+header {
+	
+	width:100%;
+	height:150px;
+	text-align:center;
+	background-color:rgba(225,72,12,255);
+	
+}
+
+header p {
+	
+	text-align:center;
+	position:relative;
+	top:20px;
+	color:white;
+	font-family:Tahoma;
+	font-size:32px;
+	
+}
+
+header canvas {
+	position:relative;
+	top:40px;
+}
+
+.ground {
+	text-align:center;
+}
+
+#ground {
+	margin: 40px auto 40px auto;
+}
+
+.feedback {
+	
+	text-align:center;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:25px;
+	position:relative;
+	top:-300px;
+	
+}
+
+.feedback a:link, .feedback a {
+	cursor:pointer;
+	position:relative;
+	letter-spacing:-1.5px;
+	word-spacing:-1px;
+	color:rgba(225,72,12,255);
+	text-decoration:none;
+	text-shadow: 0 1px 0px rgba(200,65,8,255), 0 2px 0px rgba(200,65,8,255), 0 3px 0px rgba(200,65,8,255),
+	 0 4px 0px rgba(200,65,8,255);
+	
+}
+
+.feedback a:active {
+	top:4px;
+	text-shadow: none;
+}
+
+div.ground div {
+	position:absolute;
+	width:80px;
+	height:80px;
+	z-index:999;
+	cursor:pointer;
+
+}
+
+div.ground canvas {
+	
+	z-index: 5;
+	
+}
+
+#p2, #p5, #p8 {
+	
+	width:100px
+	
+	
+}
+
+#turna {
+	
+	font-family:Tahoma;
+	font-size:30px;
+	color:rgba(128,23,53,255);
+	position:relative;
+	text-align:center;
+		
+}
+
+#locker {
+	display:block;
+	width:320px;
+	height:320px;
+	z-index:-2;
+	margin: 0 auto 0 auto;
+	position:relative;
+	top: -400px;
+	
+}
+
+#reload {
+	
+	width:100px;
+	height:40px;
+	background-color:rgba(225,72,12,255);
+	color:white;
+	font-size:20px;
+	padding-top:15px;
+	font-weight:bold;
+	text-align:center;
+	margin: 0 auto 0 auto;
+	position:relative;
+	top:-120px;
+	cursor:pointer;
+	
+}
+
