@@ -486,6 +486,8 @@ function run() {
     
 };
 
-run();
+document.body.onload = function() {
+    run();
+}
 
 
