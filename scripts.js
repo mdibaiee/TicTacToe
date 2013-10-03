@@ -1,11 +1,10 @@
-function run() {
+function run(first) {
         
     var ground = document.getElementById('ground').getContext('2d'),
         turna = document.getElementById('turna'),
         turn = Math.round(Math.random()),
         marked = [],
         reload = document.getElementById('reload');
-    
     // DRAWING STROKE AND LINE ( STROKE = WHITE, LINE = PURPLE )
     
     
@@ -80,117 +79,71 @@ function run() {
     // DRAW 'X' SHAPE
     
     function drawX(x) {
-        
-        
+        ground.beginPath();
+        ground.lineWidth=5;
         if(x == 1) {
-            
-            ground.beginPath();
             ground.moveTo(20,20);
-            ground.lineWidth=5;
             ground.lineTo(75,80);
             ground.moveTo(20,80);
             ground.lineTo(75,20);
-            ground.stroke();
-            
         }
         
         if(x == 2) {
-            
-            ground.beginPath();
             ground.moveTo(140,20);
-            ground.lineWidth=5;
             ground.lineTo(195,80);
             ground.moveTo(140,80);
             ground.lineTo(195,20);
-            ground.stroke();
-            
         }
     
         if(x == 3) {
-            
-            ground.beginPath();
             ground.moveTo(260,20);
-            ground.lineWidth=5;
             ground.lineTo(315,80);
             ground.moveTo(260,80);
             ground.lineTo(315,20);
-            ground.stroke();
-            
         }
         
         if(x == 4) {
-            
-            ground.beginPath();
             ground.moveTo(20,130);
-            ground.lineWidth=5;
             ground.lineTo(75,190);
             ground.moveTo(20,190);
             ground.lineTo(75,130);
-            ground.stroke();
-            
         }
         
         if(x == 5) {
-            
-            ground.beginPath();
             ground.moveTo(140,130);
-            ground.lineWidth=5;
             ground.lineTo(195,190);
             ground.moveTo(140,190);
             ground.lineTo(195,130);
-            ground.stroke();
-            
         }
         
         if(x == 6) {
-            
-            ground.beginPath();
             ground.moveTo(260,130);
-            ground.lineWidth=5;
             ground.lineTo(315,190);
             ground.moveTo(260,190);
             ground.lineTo(315,130);
-            ground.stroke();
-            
         }
         
         if(x == 7) {
-            
-            ground.beginPath();
             ground.moveTo(20,250);
-            ground.lineWidth=5;
             ground.lineTo(75,310);
             ground.moveTo(20,310);
             ground.lineTo(75,250);
-            ground.stroke();
-            
         }
-        
         if(x == 8) {
-            
-            ground.beginPath();
             ground.moveTo(140,250);
-            ground.lineWidth=5;
             ground.lineTo(195,310);
             ground.moveTo(140,310);
             ground.lineTo(195,250);
-            ground.stroke();
-            
         }
         
         if(x == 9) {
-            
-            ground.beginPath();
             ground.moveTo(260,250);
-            ground.lineWidth=5;
             ground.lineTo(315,310);
             ground.moveTo(260,310);
             ground.lineTo(315,250);
-            ground.stroke();
-            
         }
         
-        
+        ground.stroke();
         
     }
     
@@ -199,87 +152,44 @@ function run() {
     
     function drawO(o) {
         
+        ground.beginPath();
+        ground.lineWidth=5;
         if(o == 1) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
             ground.arc(45,45,25,0,2*Math.PI);
-            ground.stroke();
-            
         }
         
         if(o == 2) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
             ground.arc(165,45,25,0,2*Math.PI);
-            ground.stroke();
-            
         }
         
         if(o == 3) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
-            ground.arc(285,45,25,0,2*Math.PI);
-            ground.stroke();
-            
+            ground.arc(285,45,25,0,2*Math.PI); 
         }
         
         if(o == 4) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
-            ground.arc(45,165,25,0,2*Math.PI);
-            ground.stroke();
-            
+            ground.arc(45,165,25,0,2*Math.PI); 
         }
         
         if(o == 5) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
             ground.arc(165,165,25,0,2*Math.PI);
-            ground.stroke();
-            
         }
         
         if(o == 6) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
             ground.arc(285,165,25,0,2*Math.PI);
-            ground.stroke();
-            
         }
         
         if(o == 7) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
             ground.arc(45,285,25,0,2*Math.PI);
-            ground.stroke();
-            
         }
         
         if(o == 8) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
             ground.arc(165,285,25,0,2*Math.PI);
-            ground.stroke();
-            
         }
         
         if(o == 9) {
-            
-            ground.beginPath();
-            ground.lineWidth=5;
-            ground.arc(285,285,25,0,2*Math.PI);
-            ground.stroke();
-            
+            ground.arc(285,285,25,0,2*Math.PI);  
         }
-    
+        ground.stroke();
         
         
         
@@ -298,16 +208,17 @@ function run() {
         
     }
     
-    
-    setPosition('p1',45,45);
-    setPosition('p2',165,45);
-    setPosition('p3',290,45);
-    setPosition('p4',45,165);
-    setPosition('p5',165,165);
-    setPosition('p6',290,165);
-    setPosition('p7',45,280);
-    setPosition('p8',165,280);
-    setPosition('p9',290,280);
+    if( first ) {
+        setPosition('p1',45,45);
+        setPosition('p2',165,45);
+        setPosition('p3',290,45);
+        setPosition('p4',45,165);
+        setPosition('p5',165,165);
+        setPosition('p6',290,165);
+        setPosition('p7',45,280);
+        setPosition('p8',165,280);
+        setPosition('p9',290,280);
+    }
     
     if(turn == 0) {
         turna.innerHTML='X\'s turn';
@@ -484,7 +395,7 @@ function run() {
 };
 
 document.body.onload = function() {
-    run();
+    run(true);
 }
 
 
