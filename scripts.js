@@ -471,9 +471,10 @@ function run() {
             turna.style.fontSize='40px';
             disable();
             reload.className = 'fade';
+            marked = [];
         }
             
-        marked = [];
+        
     
     });
     
