@@ -328,7 +328,7 @@ function run() {
         var n = element.charAt(1);
         
         
-        if( turn == 0 && done == false && marked.indexOf(n) == -1) {
+        if( turn == 0 && !done && marked.indexOf(n) == -1 ) {
             
             
             
@@ -354,7 +354,7 @@ function run() {
     
         }
         
-        if( turn == 1 && done == false && marked.indexOf(n) == -1 ) {
+        if( turn == 1 && !done && marked.indexOf(n) == -1 ) {
             
             
             drawO(n);
@@ -381,19 +381,33 @@ function run() {
         
     }
     
-    var s = {}
-    window.s = s;
-    for( var i = 1; i < 10; i++ ) {
-        s['p'+i] = function() { set('p'+i) }
-    }
+    var s = {
     
+        p1 : function() { set('p1') },
+        p2 : function() { set('p2') },
+        p3 : function() { set('p3') },
+        p4 : function() { set('p4') },
+        p5 : function() { set('p6') },
+        p6 : function() { set('p6') },
+        p7 : function() { set('p7') },
+        p8 : function() { set('p8') },
+        p9 : function() { set('p9') }
+        
+    }
+    /*for( var i = 1; i < 10; i++ ) {
+        s['p'+i] = function() { set('p'+i) }
+    }*/
+    
+    window.s = s;
+    window.set = set;
     for( var i = 1; i < 10; i++ ) {
         document.getElementById('p'+i).addEventListener('touchstart', s['p'+i]);
+        console.log( 'document.getElementById(p'+i+').addEventListener(touchstart, s[p' + i +'])' )
     }
         
     function disable() {
         for( var i = 1; i < 10; i++ ) {
-            document.getElementById('p'+i).removeEventListener('touchstart', s['p'+1]);
+            document.getElementById('p'+i).removeEventListener('touchstart', s['p'+i]);
         }
     }
     
