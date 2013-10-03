@@ -505,7 +505,7 @@ document.getElementById('ground').addEventListener('touchstart', function(){
 	
 	marked.indexOf(1);
 
-};
+});
 
 
 
