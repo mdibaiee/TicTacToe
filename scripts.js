@@ -4,7 +4,6 @@ function run() {
         turna = document.getElementById('turna'),
         turn = Math.round(Math.random()),
         marked = [],
-        feedback = document.getElementsByClassName('feedback'),
         reload = document.getElementById('reload');
     
     // DRAWING STROKE AND LINE ( STROKE = WHITE, LINE = PURPLE )
@@ -474,10 +473,12 @@ function run() {
             reload.className = 'fade';
         }
             
-        
-        marked.indexOf(1);
+        marked = [];
     
     });
+    
+    window.s = s;
+    window.marked = marked;
     
 };
 
